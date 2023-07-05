@@ -4,14 +4,13 @@ import (
 	"crypto/tls"
 	"fmt"
 	"log"
+	"github.com/zhengyi13/cert-exporter/config"
 )
 
-type HostPort string
-
-func Probe(hp HostPort) (timestamp int64, err error){
+func Probe(hp config.HostPort) (timestamp int64, err error){
 	log.Printf("probing %s", hp)
 	config :=tls.Config{}
-	conn, err := tls.Dial("tcp", string(hp), &config)
+	conn, err := tls.Dial("tcp", hp.String(), &config)
 	// error case; die early
 	if err != nil {
 		return timestamp, fmt.Errorf("dial failure: %w", err)

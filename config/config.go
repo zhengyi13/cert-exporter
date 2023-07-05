@@ -13,6 +13,10 @@ type HostPort struct {
 	Port     int    `yaml:"port"`
 }
 
+func (hp HostPort) String() string {
+	return fmt.Sprintf("%s:%d", hp.Hostname, hp.Port)
+}
+
 type Config []HostPort
 
 // GetConfig takes a filename, and returns either a functional config, or an error.
