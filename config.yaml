@@ -1,4 +1,4 @@
-- hostname: localhost
+- hostname: acme.com
   port: 443
-- hostname: localhost
-  port: 8443
+- hostname: slashdot.org
+  port: 443
