@@ -10,7 +10,7 @@ have to monitor certificate expiration dates - think
 
 ## Usage
 
-1. Create a config file in the style of the included ``config.yaml`
+1. Create a config file in the style of the included `config.yaml`
    with as many host/port combinations as you care to monitor.
 1. `cert-exporter -config /path/to/config.yaml`
 1. Teach your prometheus instance to scrape the new target.
